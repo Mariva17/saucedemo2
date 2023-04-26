@@ -3,6 +3,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import static org.junit.Assert.assertEquals;
+
 public class LoginPage {
     WebDriver driver;
 
@@ -17,16 +19,37 @@ public class LoginPage {
     @FindBy(id = "login-button")
     private WebElement loginButton;
 
-    public void enterValueToUserName(String userNameValue) {
+    @FindBy(tagName = "h3")
+    private WebElement error;
+    public void enterValueToUserName(User user) {
 
-        userNameInputField.sendKeys(userNameValue);
+        userNameInputField.sendKeys(user.getUsername());
     }
 
-    public void enterValueToPassword(String passwordValue) {
-        passwordInputField.sendKeys(passwordValue);
+    public void enterValueToPassword(User user) {
+
+        passwordInputField.sendKeys(user.getPassword());
     }
     public void clickOnLoginButton() {
         loginButton.click();
+    }
+
+    public boolean getErrorMessage() {
+        return error.isDisplayed();
+    }
+
+    public void errorMessageTextIsCorrect(String expectedText) {
+       assertEquals(expectedText, error.getText());
+    }
+
+    public String getErrorMessageText() {
+        return error.getText();
+    }
+    public void successLogin(User user) {
+        userNameInputField.sendKeys(user.getUsername());
+        passwordInputField.sendKeys(user.getPassword());
+        loginButton.click();
+
     }
 
 

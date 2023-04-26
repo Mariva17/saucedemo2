@@ -7,45 +7,47 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import static java.lang.Thread.sleep;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class LoginTest {
-    ChromeDriver driver;
+public class LoginTest extends BaseTest {
 
-    @Before
-    public void setUp() {
-        System.setProperty("webdriver.chrome.driver","/C:/Program Files/chromedriver.exe");
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
-        driver = new ChromeDriver(options);
-        driver.get("https://www.saucedemo.com/");
-    }
-    @After
-    public void tearDown() throws InterruptedException {
-        sleep(2000);
-        driver.quit();
-    }
-    @Test
-    public void loginWithValidData() {
-        WebElement userNameInputField = driver.findElement(By.id("user-name"));
-        userNameInputField.sendKeys("standard_user");
-        WebElement passwordInputField = driver.findElement(By.id("password"));
-        passwordInputField.sendKeys("secret_sauce");
-        WebElement loginButton = driver.findElement(By.id("login-button"));
-        loginButton.click();
-        WebElement inventorylist = driver.findElement(By.className("inventory_list"));
-        assertTrue(inventorylist.isDisplayed());
 
-    }
     @Test
     public void loginWithValidDataPD() {
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.enterValueToUserName("standard_user");
-        loginPage.enterValueToPassword("secret_sauce");
+        loginPage.enterValueToUserName(validUser);
+        loginPage.enterValueToPassword(validUser);
         loginPage.clickOnLoginButton();
+        // проверка успешной авторизации
         InventoryPage inventoryPage = new InventoryPage(driver);
-        inventoryPage.goToInventoryList();
+        assertTrue(inventoryPage.goToInventoryList());
     }
+
+    @Test
+    public void loginWithLockedOutUser() {
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.enterValueToUserName(lockedOutUser);
+        loginPage.enterValueToPassword(lockedOutUser);
+        loginPage.clickOnLoginButton();
+//       assertTrue(loginPage.getErrorMessage()); // проверка на получение сообщения об ошибке
+//        loginPage.errorMessageTextIsCorrect("Epic sadface: Sorry, this user has been locked out."); // проверка, что получили опред.текст ошибки
+        assertEquals("Epic sadface: Sorry, this user has been locked out.", loginPage.getErrorMessageText());
+        assertTrue(loginPage.getErrorMessageText().contains("Sorry, this user has been locked out"));
+
+    }
+    @Test
+    public void loginWithInvalidData() {
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.enterValueToUserName(invalidDataUser);
+        loginPage.enterValueToPassword(invalidDataUser);
+        loginPage.clickOnLoginButton();
+        assertTrue(loginPage.getErrorMessageText().contains("Username and password do not match any user in this service"));
+    }
+
+
+
+
 
 
 }
