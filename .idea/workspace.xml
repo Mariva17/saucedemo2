@@ -4,16 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ea042b6-60b5-4411-82b4-89842470a8da" name="Changes" comment="new pages and methods">
+    <list default="true" id="4ea042b6-60b5-4411-82b4-89842470a8da" name="Changes" comment="Added new methods">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CheckoutStepOnePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CheckoutStepOnePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InventoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InventoryPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/InventoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/InventoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LoginTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,12 +47,22 @@
       <recent name="C:\Users\mariv\IdeaProjects\saucedemo\src\test" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.InventoryTest.checkUrl">
+  <component name="RunManager" selected="JUnit.InventoryTest.itemElementsTest">
     <configuration name="InventoryTest.checkUrl" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="saucedemo" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="InventoryTest" />
       <option name="METHOD_NAME" value="checkUrl" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InventoryTest.itemElementsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="saucedemo" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="InventoryTest" />
+      <option name="METHOD_NAME" value="itemElementsTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -96,23 +98,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InventoryTest.sortPriceLowToHigh" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="saucedemo" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="InventoryTest" />
-      <option name="METHOD_NAME" value="sortPriceLowToHigh" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.InventoryTest.itemElementsTest" />
         <item itemvalue="JUnit.InventoryTest.checkUrl" />
         <item itemvalue="JUnit.InventoryTest.sortNameZtoA" />
         <item itemvalue="JUnit.InventoryTest.sortNameAtoZ" />
         <item itemvalue="JUnit.InventoryTest.sortPriceHighToLow" />
-        <item itemvalue="JUnit.InventoryTest.sortPriceLowToHigh" />
       </list>
     </recent_temporary>
   </component>
@@ -146,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683794136923</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added new methods">
+      <created>1685522180931</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1685522180931</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -164,6 +163,7 @@
     <MESSAGE value="first" />
     <MESSAGE value="second" />
     <MESSAGE value="new pages and methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="new pages and methods" />
+    <MESSAGE value="Added new methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added new methods" />
   </component>
 </project>

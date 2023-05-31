@@ -63,6 +63,7 @@
                 <version>3.0.0-M5</version>
                 <configuration>
                     <includes>**/LoginTest.java</includes>
+                    <includes>**/InventoryTest.java</includes>
                     <testFailureIgnore>true</testFailureIgnore>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
