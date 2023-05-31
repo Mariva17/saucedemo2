@@ -1,3 +1,4 @@
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -6,8 +7,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
+import static java.lang.Double.parseDouble;
 import static org.junit.Assert.assertTrue;
 
 public class InventoryPage extends BasePage{
@@ -22,7 +26,7 @@ public class InventoryPage extends BasePage{
     @FindBy(className = "inventory_item")
     private List<WebElement> inventoryItems;
 
-    @FindBy(css = "img[class=\'inventory_item_img\']")
+    @FindBy(css = "img[class='inventory_item_img']")
     private List<WebElement> inventoryItemsImages;
 
     @FindBy(className = "inventory_item_name")
@@ -45,8 +49,21 @@ public class InventoryPage extends BasePage{
     @FindBy(className = "inventory_item_price")
     private List<WebElement> inventoryPrices;
 
+    @FindBy(className = "product_sort_container")
+    private WebElement sortDropDown;
 
+    @FindBy(css = "[value='lohi']")
+    private WebElement lowToHigh;
 
+    @FindBy(css = "[value='hilo']")
+    private WebElement highToLow;
+
+    @FindBy(css = "[value='az']")
+    private WebElement AtoZ;
+    @FindBy(css = "[value='za']")
+    private WebElement ZtoA;
+
+    @Step("Inventory page is open")
     public boolean goToInventoryList() {
         return inventorylist.isDisplayed();
     }
@@ -96,6 +113,11 @@ public class InventoryPage extends BasePage{
         }
         return displayed;
     }
+    public void checkURLContainsInventory() {
+        System.out.println(driver.getCurrentUrl());
+        assertTrue(driver.getCurrentUrl().contains("inventory"));
+
+    }
     public boolean allNamesStartWithSauceLabs() {
         boolean hasText = true;
  //       int index = 1;
@@ -142,6 +164,71 @@ public class InventoryPage extends BasePage{
         return inventoryPrices.get(0).getText();
 
     }
+    public void choosePriceLowToHighSortOption() {
+        clickOnTheElement(sortDropDown);
+        clickOnTheElement(lowToHigh);
+    }
+
+    public void choosePriceHighToLowSortOption() {
+        clickOnTheElement(sortDropDown);
+        clickOnTheElement(highToLow);
+    }
+
+
+    public boolean checkSortFromLowToHigh() {
+        List<Double> actualPrices = new ArrayList<>();
+        for (WebElement price : inventoryPrices) {
+            actualPrices.add(parseDouble(price.getText().substring(1))); // price.getText().replaceAll("[^0-9.]", "") - всё что кроме от нуля до девяти и точки, заменить на ничего, т.е. оставить только цифры и точки
+        }
+        List<Double> expectedPrices = new ArrayList<>(actualPrices);
+        Collections.sort(expectedPrices);
+
+        return actualPrices.equals(expectedPrices);
+    }
+    public boolean checkSortFromHighToLow() {
+        List<Double> actualPrices = new ArrayList<>();
+        for (WebElement price : inventoryPrices) {
+            actualPrices.add(parseDouble(price.getText().substring(1))); // price.getText().replaceAll("[^0-9.]", "") - всё что кроме от нуля до девяти и точки, заменить на ничего, т.е. оставить только цифры и точки
+        }
+        List<Double> expectedPrices = new ArrayList<>(actualPrices);
+        Collections.sort(expectedPrices, Collections.reverseOrder());
+
+        return actualPrices.equals(expectedPrices);
+    }
+
+    public void chooseAToZSortOption() {
+        clickOnTheElement(sortDropDown);
+        clickOnTheElement(AtoZ);
+    }
+    public void chooseZToASortOption() {
+        clickOnTheElement(sortDropDown);
+        clickOnTheElement(ZtoA);
+    }
+
+    public boolean checkNameSortFromAToZ() {
+        List<String> actualNames = new ArrayList<>();
+        for (WebElement name : inventoryNames) {
+            actualNames.add(name.getText());
+        }
+        List<String> expectedNames = new ArrayList<>(actualNames);
+        Collections.sort(expectedNames);
+
+        return actualNames.equals(expectedNames);
+    }
+    public boolean checkNameSortFromZToA() {
+        List<String> actualNames = new ArrayList<>();
+        for (WebElement name : inventoryNames) {
+            actualNames.add(name.getText());
+        }
+        List<String> expectedNames = new ArrayList<>(actualNames);
+        Collections.sort(expectedNames, Collections.reverseOrder());
+
+        return actualNames.equals(expectedNames);
+    }
+
+
+
+
 
 
 

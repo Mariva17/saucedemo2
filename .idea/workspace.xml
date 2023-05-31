@@ -4,18 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ea042b6-60b5-4411-82b4-89842470a8da" name="Changes" comment="second">
-      <change afterPath="$PROJECT_DIR$/src/main/java/BasePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/CartPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/CheckOutCompletePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/CheckoutStepOnePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/CheckoutStepTwoPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/SideBar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/CartTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/CheckoutTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/SideBarTest.java" afterDir="false" />
+    <list default="true" id="4ea042b6-60b5-4411-82b4-89842470a8da" name="Changes" comment="new pages and methods">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CheckoutStepOnePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CheckoutStepOnePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/InventoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InventoryPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LoginPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BaseTest.java" afterDir="false" />
@@ -51,55 +44,63 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mariv/IdeaProjects/saucedemo&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mariv/IdeaProjects/saucedemo-4&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.CheckoutTest.checkFinalCost">
-    <configuration name="CartTest.successAdding1Item" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mariv\IdeaProjects\saucedemo\src\test" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.InventoryTest.checkUrl">
+    <configuration name="InventoryTest.checkUrl" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="saucedemo" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CartTest" />
-      <option name="METHOD_NAME" value="successAdding1Item" />
+      <option name="MAIN_CLASS_NAME" value="InventoryTest" />
+      <option name="METHOD_NAME" value="checkUrl" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CartTest.successAdding3Item" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="InventoryTest.sortNameAtoZ" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="saucedemo" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CartTest" />
-      <option name="METHOD_NAME" value="successAdding3Item" />
+      <option name="MAIN_CLASS_NAME" value="InventoryTest" />
+      <option name="METHOD_NAME" value="sortNameAtoZ" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CheckoutTest.checkFinalCost" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="InventoryTest.sortNameZtoA" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="saucedemo" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CheckoutTest" />
-      <option name="METHOD_NAME" value="checkFinalCost" />
+      <option name="MAIN_CLASS_NAME" value="InventoryTest" />
+      <option name="METHOD_NAME" value="sortNameZtoA" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CheckoutTest.testPriceInCheckout" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="InventoryTest.sortPriceHighToLow" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="saucedemo" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CheckoutTest" />
-      <option name="METHOD_NAME" value="testPriceInCheckout" />
+      <option name="MAIN_CLASS_NAME" value="InventoryTest" />
+      <option name="METHOD_NAME" value="sortPriceHighToLow" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CheckoutTest.testSuccessCheckout" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="InventoryTest.sortPriceLowToHigh" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="saucedemo" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CheckoutTest" />
-      <option name="METHOD_NAME" value="testSuccessCheckout" />
+      <option name="MAIN_CLASS_NAME" value="InventoryTest" />
+      <option name="METHOD_NAME" value="sortPriceLowToHigh" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -107,11 +108,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CheckoutTest.checkFinalCost" />
-        <item itemvalue="JUnit.CheckoutTest.testPriceInCheckout" />
-        <item itemvalue="JUnit.CheckoutTest.testSuccessCheckout" />
-        <item itemvalue="JUnit.CartTest.successAdding1Item" />
-        <item itemvalue="JUnit.CartTest.successAdding3Item" />
+        <item itemvalue="JUnit.InventoryTest.checkUrl" />
+        <item itemvalue="JUnit.InventoryTest.sortNameZtoA" />
+        <item itemvalue="JUnit.InventoryTest.sortNameAtoZ" />
+        <item itemvalue="JUnit.InventoryTest.sortPriceHighToLow" />
+        <item itemvalue="JUnit.InventoryTest.sortPriceLowToHigh" />
       </list>
     </recent_temporary>
   </component>
@@ -138,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682528217516</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="new pages and methods">
+      <created>1683794136923</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1683794136923</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -155,6 +163,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first" />
     <MESSAGE value="second" />
-    <option name="LAST_COMMIT_MESSAGE" value="second" />
+    <MESSAGE value="new pages and methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="new pages and methods" />
   </component>
 </project>

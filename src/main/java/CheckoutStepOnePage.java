@@ -30,6 +30,7 @@ public class CheckoutStepOnePage extends BasePage {
         firstName.sendKeys(firstNameValue);
     }
     public void enterValueToLastName(String lastNameValue) {
+
         lastName.sendKeys(lastNameValue);
     }
 

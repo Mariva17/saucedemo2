@@ -1,3 +1,5 @@
+import io.qameta.allure.Description;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -7,13 +9,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import static java.lang.Thread.sleep;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class LoginTest extends BaseTest {
 
 
-    @Test
+    @Test @DisplayName("Success Login")
+    @Description("Login with valid data")
     public void loginWithValidDataPD() {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.enterValueToUserName(validUser);
@@ -21,7 +23,14 @@ public class LoginTest extends BaseTest {
         loginPage.clickOnLoginButton();
         // проверка успешной авторизации
         InventoryPage inventoryPage = new InventoryPage(driver);
-        assertTrue(inventoryPage.goToInventoryList());
+        assertTrue("Inventory page is NOT open", inventoryPage.goToInventoryList());
+
+        /* Паттерный метод
+        LoginPage loginPage = new LoginPage(driver);
+        assertTrue(loginPage.enterValueToUserName(validUser)
+                     .enterValueToPassword(validUser)
+                     .clickOnLoginButton().inventoryListIsDisplayed());
+         */
     }
 
 
